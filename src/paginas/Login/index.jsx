@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Importe o Link do React Router
 import styles from "../../componentes/Conteudo/Conteudo.module.css";
 
 const Login = () => {
@@ -16,7 +17,6 @@ const Login = () => {
     function handleLoginSubmit(e) {
         e.preventDefault();
 
-        // Buscar usuário e senha cadastrados na tela 1
         const usuarioCadastrado = JSON.parse(localStorage.getItem('user'));
 
         if (usuarioCadastrado !== null) {
@@ -41,6 +41,9 @@ const Login = () => {
                 <input type="password" onChange={(e) => handleSenhaChange(e)} />
 
                 <button onClick={(e) => handleLoginSubmit(e)}>Login</button>
+
+                {/* Link para navegar para a página de cadastro */}
+                <Link to="/cadastro">Ainda não tem uma conta? Cadastre-se aqui.</Link>
             </form>
         </div>
     );

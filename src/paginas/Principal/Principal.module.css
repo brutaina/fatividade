@@ -1,0 +1,21 @@
+/* Principal.module.css */
+.principalContainer {
+    background-color: #4CAF50; /* Background verde */
+  }
+  
+  /* Adicione estilos para o quadrado azul */
+  .opcoesContainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3498db; /* Cor azul */
+    padding: 20px;
+    border-radius: 10px; /* Borda arredondada */
+    margin-top: 20px; /* Margem superior */
+  }
+  
+  .opcaoLink {
+    color: white; /* Texto branco */
+    text-decoration: none; /* Sem sublinhado */
+    font-size: 18px; /* Tamanho da fonte */
+  }
+  

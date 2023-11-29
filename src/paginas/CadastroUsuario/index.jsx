@@ -1,59 +1,61 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Importe o Link do React Router
 import styles from "../../componentes/Conteudo/Conteudo.module.css";
 
 const CadastroUsuario = () => {
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
 
-    function handleNome(e) {
-        setNome(e.target.value);
+  function handleNome(e) {
+    setNome(e.target.value);
+  }
+
+  function handleEmail(e) {
+    setEmail(e.target.value);
+  }
+
+  function handleConfirmacaoDeSenha(e) {
+    setConfirmacaoSenha(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!nome || !email || !confirmacaoSenha) {
+      alert("Por favor, preencha todos os campos.");
+      return;
     }
 
-    function handleEmail(e) {
-        setEmail(e.target.value);
+    if (confirmacaoSenha) {
+      const user = { nome, email, senha: confirmacaoSenha };
+      localStorage.setItem('user', JSON.stringify(user));
+      alert("Usuário salvo com sucesso!");
+    } else {
+      alert("A senha não pode estar vazia");
     }
+  }
 
-    function handleConfirmacaoDeSenha(e) {
-        setConfirmacaoSenha(e.target.value);
-    }
+  return (
+    <div id="div-cadastro-usuario" className={styles.conteudo}>
+      <h1>Cadastro de Usuário</h1>
+      <form className={styles.formulario}>
+        <label htmlFor="cadastro_nome">Nome</label>
+        <input type="text" onChange={(e) => handleNome(e)} />
 
-    function handleSubmit(e) {
-        e.preventDefault();
+        <label htmlFor="cadastro_email">Email</label>
+        <input type="text" onChange={(e) => handleEmail(e)} />
 
-        // Validação de campos vazios
-        if (!nome || !email || !confirmacaoSenha) {
-            alert("Por favor, preencha todos os campos.");
-            return;
-        }
+        <label htmlFor="cadastro_confirmacaoSenha">Confirmação de Senha</label>
+        <input type="password" onChange={(e) => handleConfirmacaoDeSenha(e)} />
 
-        // Verificação se as senhas coincidem
-        if (confirmacaoSenha) {
-            const user = { nome, email, senha: confirmacaoSenha };
-            localStorage.setItem('user', JSON.stringify(user));
-            alert("Usuário salvo com sucesso!");
-        } else {
-            alert("A senha não pode estar vazia");
-        }
-    }
+        <button onClick={(e) => handleSubmit(e)}>Salvar Usuário</button>
 
-    return (
-        <div id="div-cadastro-usuario" className={styles.conteudo}>
-            <h1>Cadastro de Usuário</h1>
-            <form className={styles.formulario}>
-                <label htmlFor="cadastro_nome">Nome</label>
-                <input type="text" onChange={(e) => handleNome(e)} />
-
-                <label htmlFor="cadastro_email">Email</label>
-                <input type="text" onChange={(e) => handleEmail(e)} />
-
-                <label htmlFor="cadastro_confirmacaoSenha">Confirmação de Senha</label>
-                <input type="password" onChange={(e) => handleConfirmacaoDeSenha(e)} />
-
-                <button onClick={(e) => handleSubmit(e)}>Salvar Usuário</button>
-            </form>
-        </div>
-    );
+        {/* Link para navegar para a página de login */}
+        <Link to="/login">Já tem uma conta? Faça login aqui.</Link>
+      </form>
+    </div>
+  );
 }
 
 export default CadastroUsuario;
