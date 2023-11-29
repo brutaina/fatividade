@@ -1,9 +1,8 @@
-.App {
-  text-align: center;
+ text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 5 px;
   pointer-events: none;
 }
 
@@ -35,4 +34,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 3cm; /* Defina o tamanho desejado */
+  height: auto; /* Mantém a proporção original da imagem */
+}
+
+.titulo {
+  font-size: 3rem;
+  color: chocolate;
+  background-color: #000;
+}
+
+.subtitulo {
+  font-size: 2rem;
 }
