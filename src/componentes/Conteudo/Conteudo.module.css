@@ -1,3 +1,61 @@
 #conteudo{
     display: block;
 }
+/* Conteudo.module.css */
+.conteudo {
+    background-color: pink; /* Adicione a cor de fundo pink */
+    padding: 20px;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    color: purple; /* Adicione a cor roxa para as palavras Nome, Email, e Confirmação de Senha */
+    margin-bottom: 5px;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  button {
+    background-color: purple; /* Adicione a cor roxa para o botão */
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Conteudo.module.css */
+.conteudo {
+    background-color: pink; /* Adicione a cor de fundo pink */
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    color: purple; /* Adicione a cor roxa para as palavras Email e Senha */
+    margin-bottom: 5px;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  button {
+    background-color: purple; /* Adicione a cor roxa para o botão */
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
