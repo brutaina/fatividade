@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <div id="div-login" className={styles.conteudo}>
-            <h1>Login</h1>
+            <h1>simbora, loga aí</h1>
             <form>
                 <label htmlFor="login_email">Email</label>
                 <input type="text" onChange={(e) => handleEmailChange(e)} />

@@ -38,7 +38,7 @@ const CadastroUsuario = () => {
 
   return (
     <div id="div-cadastro-usuario" className={styles.conteudo}>
-      <h1>Cadastro de Usuário</h1>
+      <h1>Entra colega, se cadastra!</h1>
       <form className={styles.formulario}>
         <label htmlFor="cadastro_nome">Nome</label>
         <input type="text" onChange={(e) => handleNome(e)} />
